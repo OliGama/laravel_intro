@@ -28,6 +28,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('calculator', [CalculatorController::class, 'calculatorPage']);
 
 Route::post('sum', [CalculatorController::class, 'sum']);
-
-Route::get('users/create', [UserController::class, 'create']);
-Route::post('users', [UserController::class, 'store']);
+Route::get('users', [UserController::class, 'index'])-> name('users.index');
+Route::get('users/create', [UserController::class, 'create'])->name('users.create');
+Route::post('users', [UserController::class, 'store'])->name('users.store');
